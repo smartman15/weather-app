@@ -1,1 +1,1 @@
-Todo list project using objects, factories/constructors, modules, webpack, and other stuff
+Weather app using weather API 
