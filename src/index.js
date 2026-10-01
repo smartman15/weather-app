@@ -1,3 +1,5 @@
+import './styles.css';
+
 const submitBtn = document.getElementById('submit');
 const cityInput = document.getElementById('city');
 
