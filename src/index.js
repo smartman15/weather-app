@@ -11,9 +11,12 @@ submitBtn.addEventListener('click', (event) => {
 
 async function getCityWeather(city){
     try {
-        const result = await fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/' + city + '?unitGroup=us&key=QJBS2EPUENQXYVM8KFPQY92QY&contentType=json');
+        const processedCity = city.split(' ').join('%20');
+        const url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/' + processedCity + '?unitGroup=us&key=QJBS2EPUENQXYVM8KFPQY92QY&contentType=json';
+        const result = await fetch(url);
         const jsonResult = await result.json();
         console.log(jsonResult);
+        
     } catch (error) {
         throw new Error('couldnt get weather data :(')
     }
