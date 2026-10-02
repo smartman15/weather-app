@@ -3,7 +3,7 @@ import { setBackgroundTemperature } from "./set-background-temperature.js";
 export async function getLocationWeather(location) {
   try {
     const locationDiv = document.getElementById("location-name");
-    const temperatureDiv = document.getElementById("temperature");
+    const temperatureDiv = document.querySelector("#temperature>p");
     const descriptionDiv = document.getElementById("description");
 
     const processedLocation = location.split(" ").join("%20");
