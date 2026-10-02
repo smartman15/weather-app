@@ -2,3 +2,11 @@
     display: flex;
     justify-content: center;
 }
+
+.cold{
+    background-color: skyblue;
+}
+
+.freezing{
+    background-color: rgb(0, 110, 255);
+}
