@@ -4,7 +4,7 @@ export const gifAPI = (() => {
   const loadGif = async (keyword) => {
     try {
       const result = await fetch(
-        "https://api.giphy.com/v1/gifs/translate?api_key=g2abkbpoLqci4Lvwv78ZGpwEkMqHbMTK&s=" +
+        "https://api.giphy.com/v1/gifs/random?api_key=g2abkbpoLqci4Lvwv78ZGpwEkMqHbMTK&tag=" +
           keyword +
           "&rating=g",
       );
