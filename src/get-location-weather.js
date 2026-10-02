@@ -1,5 +1,9 @@
 export async function getLocationWeather(location) {
   try {
+    const locationDiv = document.getElementById("location-name");
+    const temperatureDiv = document.getElementById("temperature");
+    const descriptionDiv = document.getElementById("description");
+
     const processedLocation = location.split(" ").join("%20");
     // console.log('processed city: ' + processedCity);
     const url =
@@ -10,9 +14,12 @@ export async function getLocationWeather(location) {
     const result = await fetch(url);
     const jsonResult = await result.json();
 
+    locationDiv.textContent = "Location: " + jsonResult.resolvedAddress;
+    descriptionDiv.textContent = "Description:" + jsonResult.description;
+
     // temperature in fahrenheit
     const temperature = jsonResult.currentConditions.temp;
-    console.log("temperature: " + temperature);
+    temperatureDiv.textContent = "Temperature: " + temperature + " F";
 
     // // if temperature is between 32F and 50F, set container class to cold
     // if(temperature <= 50 && temperature >= 32){

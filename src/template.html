@@ -1,20 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <img src="#" alt="">
-        <form onsubmit="event.preventDefault()">
-            <p>
-                <label for="location">Enter location:</label>
-                <input type="text" id="location">
-            </p>
-            <input type="submit" id="submit">
-        </form>
+      <img src="#" alt="" />
+
+      <div id="location-name"></div>
+      <div id="description"></div>
+      <div id="temperature"></div>
+
+      <form onsubmit="event.preventDefault()">
+        <p>
+          <label for="location">Enter location:</label>
+          <input type="text" id="location" />
+        </p>
+        <input type="submit" id="submit" />
+      </form>
     </div>
-</body>
+  </body>
 </html>
