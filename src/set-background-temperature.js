@@ -1,3 +1,5 @@
+import { gifAPI } from "./gifAPI.js";
+
 export function setBackgroundTemperature(temperature) {
   const container = document.querySelector("div.content");
   const commentDiv = document.getElementById("comment");
@@ -6,13 +8,16 @@ export function setBackgroundTemperature(temperature) {
   if (temperature <= 50 && temperature >= 32) {
     container.className = "container content cold";
     commentDiv.textContent = "it's cold here...";
+    gifAPI.loadGif("cold");
   }
   // if lower than 32F, set container class to freezing
   else if (temperature < 32) {
     container.className = "container content freezing";
     commentDiv.textContent = "it's f-freezing...";
+    gifAPI.loadGif("freezing");
   } else {
     container.className = "container content";
     commentDiv.textContent = "temperatures are alright here :)";
+    gifAPI.loadGif("cat");
   }
 }

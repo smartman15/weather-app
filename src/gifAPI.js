@@ -14,4 +14,6 @@ export const gifAPI = (() => {
       throw new Error("couldnt retrieve gif :(");
     }
   };
+
+  return { loadGif };
 })();
