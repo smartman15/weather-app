@@ -1,3 +1,5 @@
+import { setBackgroundTemperature } from "./set-background-temperature.js";
+
 export async function getLocationWeather(location) {
   try {
     const locationDiv = document.getElementById("location-name");
@@ -21,17 +23,7 @@ export async function getLocationWeather(location) {
     const temperature = jsonResult.currentConditions.temp;
     temperatureDiv.textContent = "Temperature: " + temperature + " F";
 
-    // // if temperature is between 32F and 50F, set container class to cold
-    // if(temperature <= 50 && temperature >= 32){
-    //     container.className = 'container cold';
-    // }
-    // // if lower than 32F, set container class to freezing
-    // else if(temperature < 32){
-    //     container.className = 'container freezing';
-    // }
-    // else{
-    //     container.className = 'container';
-    // }
+    setBackgroundTemperature(temperature);
 
     console.log(jsonResult);
   } catch (error) {
