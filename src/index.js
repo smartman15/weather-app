@@ -1,20 +1,20 @@
 import './styles.css';
 
 const submitBtn = document.getElementById('submit');
-const cityInput = document.getElementById('city');
+const locationInput = document.getElementById('location');
 const container = document.querySelector('div.container');
 
 submitBtn.addEventListener('click', (event) => {
-    const city = cityInput.value;
-    getCityWeather(city);
+    const location = locationInput.value;
+    getLocationWeather(location);
 })
 
 
-async function getCityWeather(city){
+async function getLocationWeather(location){
     try {
-        const processedCity = city.split(' ').join('%20');
+        const processedLocation = location.split(' ').join('%20');
         // console.log('processed city: ' + processedCity);
-        const url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/' + processedCity + '?unitGroup=us&key=QJBS2EPUENQXYVM8KFPQY92QY&contentType=json';
+        const url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/' + processedLocation + '?unitGroup=us&key=QJBS2EPUENQXYVM8KFPQY92QY&contentType=json';
         // console.log(url);
         const result = await fetch(url);
         const jsonResult = await result.json();
@@ -34,7 +34,6 @@ async function getCityWeather(city){
         else{
             container.className = 'container';
         }
-        
         
 
         console.log(jsonResult);
