@@ -4,6 +4,9 @@ export const LocationWeatherAPI = (() => {
   const locationDiv = document.getElementById("location-name");
   const temperatureDiv = document.querySelector("#temperature>p");
   const descriptionDiv = document.getElementById("description");
+  let jsonObject;
+
+  const getJson = () => jsonObject;
 
   const getLocationWeather = async (location) => {
     try {
@@ -16,6 +19,7 @@ export const LocationWeatherAPI = (() => {
       // console.log(url);
       const result = await fetch(url);
       const jsonResult = await result.json();
+      jsonObject = jsonResult;
 
       locationDiv.textContent = "Location: " + jsonResult.resolvedAddress;
       descriptionDiv.textContent = "Description:" + jsonResult.description;
@@ -32,5 +36,5 @@ export const LocationWeatherAPI = (() => {
     }
   };
 
-  return { getLocationWeather };
+  return { getLocationWeather, getJson };
 })();
