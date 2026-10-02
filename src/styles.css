@@ -1,5 +1,10 @@
+* {
+  margin: 0;
+}
+
 .container {
   display: flex;
+  font-size: 1.3rem;
 }
 
 .content {
